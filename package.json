@@ -1,0 +1,98 @@
+{
+  "name": "@dcma/react-components",
+  "version": "1.2.1",
+  "main": "lib/index",
+  "types": "lib/index",
+  "license": "MIT",
+  "homepage": "https://github.com/standard-DCMA/react-components",
+  "bugs": {
+    "url": "https://github.com/standard-DCMA/react-components/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/standard-DCMA/react-components/issues"
+  },
+  "files": [
+    "lib/**/*",
+    "@types/**/*"
+  ],
+  "scripts": {
+    "start": "webpack-dev-server --progress --profile --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "build:doc": "webpack --config webpack.doc.js",
+    "build:components": "webpack --config webpack.components.js",
+    "lint": "eslint",
+    "commit": "git add . && git-cz",
+    "test": "jest --passWithNoTests"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@types/classnames": "^2.2.9",
+    "@types/codemirror": "^0.0.84",
+    "@types/enzyme": "^3.10.4",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "^26.0.4",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/react-transition-group": "^4.2.3",
+    "@typescript-eslint/eslint-plugin": "^3.1.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-jest": "^26.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.4.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^8.0.2",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "file-loader": "^5.0.2",
+    "git-cz": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "raw-loader": "^4.0.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "svg-sprite-loader": "^4.2.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.7.5",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "codemirror": "^5.51.0",
+    "react": "^16.12.0",
+    "react-codemirror2": "^6.0.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-transition-group": "^4.3.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "lib/**/*.tsx": [
+      "yarn lint"
+    ],
+    "lib/**/*.ts": [
+      "yarn lint"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "declaration": true,
+    "outDir": "./dist",
+    "declarationDir": "./dist/@types",
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "target": "es5",
+    "sourceMap": true,
+    "removeComments": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "preserveConstEnums": true,
+    "diagnostics": true,
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": [
+      "dom",
+      "es6"
+    ]
+  },
+  "include": [
+    "lib/**/*",
+    "typings/**/*",
+    "examples/**/*",
+    "tests/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.spec.tsx",
+    "**/*.test.tsx",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "*.js"
+  ]
+}

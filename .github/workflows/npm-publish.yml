@@ -1,0 +1,46 @@
+name: NPM Publish
+
+#on:
+#  pull_request:
+#    branches:
+#      - master
+#  push:
+#    branches:
+#      - master
+
+jobs:
+  prebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: test
+        run: |
+          yarn install
+          yarn test
+        env:
+          CI: true
+
+  publish-npm:
+    needs: prebuild
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+          registry-url: https://registry.npmjs.org/
+      - name: build components
+        run: |
+          yarn install
+          yarn run build:components
+      - name: publish package
+        run: |
+          cp package.json README.md ./dist
+          cd dist
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
