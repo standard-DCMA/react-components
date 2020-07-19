@@ -21,7 +21,7 @@
     "build": "webpack --config webpack.prod.js",
     "build:doc": "webpack --config webpack.doc.js",
     "build:components": "webpack --config webpack.components.js",
-    "lint": "eslint",
+    "lint": "eslint --fix",
     "commit": "git add . && git-cz",
     "test": "jest --passWithNoTests"
   },
